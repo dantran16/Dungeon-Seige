@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 public class Platform extends GameObject{
@@ -19,13 +20,24 @@ public class Platform extends GameObject{
   @Override
   public void render(Graphics g) {
     g.setColor(Color.GRAY);
-    g.fillRect(this.x,this.y,WIDTH, HEIGHT);
+    g.fillRect((int)this.x,(int)this.y,WIDTH, HEIGHT);
+    //below is to see hitbox
   }
 
   @Override
   public Rectangle hitbox() {
-    // TODO NEED TO ADD A COLLISION
-    return null;
+    return new Rectangle((int)x,(int)y,WIDTH,HEIGHT);
   }
-
+  public Rectangle tophitbox() {
+    return new Rectangle((int)x,(int)y,WIDTH,4);
+  }
+  public Rectangle bottomhitbox() {
+    return new Rectangle((int)x,(int) y + HEIGHT - 4,WIDTH,4);
+  }
+  public Rectangle righthitbox() {
+    return new Rectangle(WIDTH-4,(int)y,4,HEIGHT);
+  }
+  public Rectangle lefthitbox() {
+    return new Rectangle((int)x,(int)y,4,HEIGHT);
+  }
 }

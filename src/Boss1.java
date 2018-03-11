@@ -23,11 +23,11 @@ public class Boss1 extends GameObject {
   @Override
   public void render(Graphics g) {
     g.setColor(Color.RED);
-    g.fillRect(this.x, this.y, 50, 50);
+    g.fillRect((int)this.x, (int)this.y, 50, 50);
   }
   @Override
   public Rectangle hitbox() {
-    return new Rectangle(this.x, this.y, 50, 50);    
+    return new Rectangle((int)this.x, (int)this.y, 50, 50);    
   }
 
 }

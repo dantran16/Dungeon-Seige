@@ -35,9 +35,11 @@ public class KeyboardInput extends KeyAdapter{
     for(int i = 0; i < handler.object.size(); i++) {
       GameObject temp = handler.object.get(i);
       if(temp.getType() == Type.Player) {
-        if(key==KeyEvent.VK_W || key == KeyEvent.VK_UP) {
-        	temp.setSpeedY(-5); 
-            keyDown[0] = true;
+    	Player player = (Player) temp;
+        if(key==KeyEvent.VK_W || key == KeyEvent.VK_UP && !player.canJump()) {
+          player.setJump(true);
+          player.setSpeedY(-15);
+          keyDown[0] = true;
         }
         if(key==KeyEvent.VK_S || key == KeyEvent.VK_DOWN) {
           temp.setSpeedY(5); 

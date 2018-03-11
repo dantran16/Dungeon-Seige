@@ -18,12 +18,12 @@ public class Ground extends GameObject{
 	@Override
 	public void render(Graphics g) {
       g.setColor(Color.GRAY);
-      g.fillRect(this.x,this.y,WIDTH, HEIGHT);
+      g.fillRect((int)this.x,(int)this.y,WIDTH, HEIGHT);
 	}
 
 	@Override
 	public Rectangle hitbox() {
-      return new Rectangle(this.x,this.y,HEIGHT,WIDTH);
+      return new Rectangle((int)this.x,(int)this.y,WIDTH,HEIGHT);
 	}
 
 }

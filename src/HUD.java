@@ -10,8 +10,8 @@ import java.awt.Graphics;
  * Source - https://www.youtube.com/watch?v=5ufOPX8N1Rg
  */
 public class HUD {
-  public static int P_HEALTH = 100;
-  public static int B_HEALTH = 100;
+  public static double P_HEALTH = 100;
+  public static double B_HEALTH = 100;
   
   public void tick() {
 	final int MAX_HEALTH = 100;
@@ -32,7 +32,7 @@ public class HUD {
     g.setColor(Color.GRAY);
     g.fillRect(P_XPOS, P_YPOS, P_WIDTH, P_HEIGHT);
     g.setColor(Color.GREEN);
-    g.fillRect(P_XPOS, P_YPOS, P_HEALTH * 2, P_HEIGHT);
+    g.fillRect(P_XPOS, P_YPOS, (int) (P_HEALTH * 2), P_HEIGHT);
     g.setColor(Color.WHITE);
     g.drawRect(P_XPOS, P_YPOS, P_WIDTH, P_HEIGHT);
     
@@ -42,7 +42,7 @@ public class HUD {
     g.setColor(Color.GRAY);
     g.fillRect(B_XPOS, B_YPOS, B_WIDTH, B_HEIGHT);
     g.setColor(Color.YELLOW);
-    g.fillRect(B_XPOS, B_YPOS, B_HEALTH * 2, B_HEIGHT);
+    g.fillRect(B_XPOS, B_YPOS, (int) (B_HEALTH * 2), B_HEIGHT);
     g.setColor(Color.WHITE);
     g.drawRect(B_XPOS, B_YPOS, B_WIDTH, B_HEIGHT);
     		

@@ -133,7 +133,7 @@ public class Game extends Canvas implements Runnable{
    * 
    * Source - https://www.youtube.com/watch?v=5ufOPX8N1Rg
    */
-  public static int border(int pos, int min, int max) {
+  public static double border(double pos, double min, double max) {
     if(pos >= max)
       return pos = max;
     else if(pos <= min)

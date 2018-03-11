@@ -10,11 +10,11 @@ import java.awt.Rectangle;
  * Sources - https://www.youtube.com/watch?v=0T1U0kbu1Sk&
  */
 public abstract class GameObject {
-  protected int x,y; // for positioning
+  protected double x,y; // for positioning
   protected Type type;   // type of object
   protected int speedX, speedY; //speed of gameobject
   
-  public GameObject(int x, int y, Type type) {
+  public GameObject(double x, double y, Type type) {
     this.x = x;
     this.y = y;
     this.type = type;
@@ -40,10 +40,10 @@ public abstract class GameObject {
   public void setSpeedY(int speedY) {
     this.speedY = speedY;
   }
-  public int getX(int x) {
+  public double getX() {
     return this.x;
   }
-  public int gety(int y) {
+  public double getY() {
     return this.y;
   }
   public Type getType() {

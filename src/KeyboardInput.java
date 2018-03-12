@@ -46,12 +46,17 @@ public class KeyboardInput extends KeyAdapter{
           keyDown[1] = true;
         }
         if(key==KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
+          player.setShootRight(false);
           temp.setSpeedX(-5);
           keyDown[2] = true;
         }
         if(key==KeyEvent.VK_D || key == KeyEvent.VK_RIGHT) {
+          player.setShootRight(true);
           temp.setSpeedX(5);
           keyDown[3] = true;
+        }
+        if(key==KeyEvent.VK_X) {
+          handler.addObject(new Projectile(temp.getX(),temp.getY() +10, Type.Projectile, player.getShootRight()));
         }
       }
     }

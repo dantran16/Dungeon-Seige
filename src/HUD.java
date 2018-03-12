@@ -16,6 +16,7 @@ public class HUD {
   public void tick() {
 	final int MAX_HEALTH = 100;
     P_HEALTH = Game.border(P_HEALTH,0, MAX_HEALTH);
+    B_HEALTH = Game.border(B_HEALTH,0, MAX_HEALTH);
   }
   public void render(Graphics g) {
 	final int P_XPOS = 15;

@@ -12,14 +12,16 @@ public class Player extends GameObject {
   private boolean falling;
   private boolean canJump;
   private int jumpHeight;
+  private boolean shootRight;
   
   public Player(int x, int y, Type type, GameHandler handler) {
     super(x, y, type);
     this.handler = handler;
     this.falling = true;
     this.canJump = false;
-    this.gravity = .8;
+    this.gravity = 1;
     this.jumpHeight = 30;
+    this.shootRight = true;
   }
   
   @Override
@@ -38,7 +40,7 @@ public class Player extends GameObject {
     if(falling || canJump) {
       speedY += gravity;
       if(speedY > jumpHeight) {
-        speedY = (int) jumpHeight;
+        speedY = jumpHeight;
       }
     }
 	collision();
@@ -154,6 +156,12 @@ public class Player extends GameObject {
   }
   public void setJump(boolean a) {
     this.canJump = a;
+  }
+  public void setShootRight(boolean a) {
+    this.shootRight = a;
+  }
+  public boolean getShootRight() {
+    return this.shootRight;
   }
 }
 

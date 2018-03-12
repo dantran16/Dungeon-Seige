@@ -4,5 +4,6 @@ public enum Type {
   Boss(),
   Ground(),
   Platform(),
+  Projectile(),
   Wall();
 }

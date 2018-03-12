@@ -32,7 +32,7 @@ public class Game extends Canvas implements Runnable{
     
     //Game characters
     handler.addObject(new Player(WIDTH/2,SPAWN_YPOS,Type.Player, handler));
-    handler.addObject(new Boss1(WIDTH * 2/3, HEIGHT/2, Type.Boss));
+    handler.addObject(new Boss1(WIDTH * 2/3, HEIGHT/2, Type.Boss, handler));
     
     //The room setup
     handler.addObject(new Ground(0, FLOOR_YPOS, Type.Ground, handler));
@@ -41,11 +41,12 @@ public class Game extends Canvas implements Runnable{
     handler.addObject(new Wall(rWall_XPOS,0,Type.Wall, handler));
     
     //Platform setup
-    handler.addObject(new Platform(0, HEIGHT/2, Type.Platform, handler));
-    handler.addObject(new Platform(WIDTH*3/4, HEIGHT/2, Type.Platform, handler));
+    handler.addObject(new Platform(0, HEIGHT*7/12, Type.Platform, handler));
+    handler.addObject(new Platform(WIDTH*3/4, HEIGHT*7/12, Type.Platform, handler));
     handler.addObject(new Platform(0, HEIGHT*3/4, Type.Platform, handler));
     handler.addObject(new Platform(WIDTH*3/4, HEIGHT*3/4, Type.Platform, handler));
-    handler.addObject(new Platform(WIDTH*40/100, HEIGHT*3/4, Type.Platform, handler));
+    handler.addObject(new Platform(WIDTH*4/10, HEIGHT*5/6, Type.Platform, handler));
+    handler.addObject(new Platform(WIDTH*4/10, HEIGHT*4/6, Type.Platform, handler));
   }
   
   public synchronized void start() {

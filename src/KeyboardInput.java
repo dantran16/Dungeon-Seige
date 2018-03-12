@@ -56,7 +56,7 @@ public class KeyboardInput extends KeyAdapter{
           keyDown[3] = true;
         }
         if(key==KeyEvent.VK_X) {
-          handler.addObject(new Projectile(temp.getX(),temp.getY() +10, Type.Projectile, player.getShootRight()));
+          handler.addObject(new Projectile(temp.getX(),temp.getY() +10, Type.PlayerProjectile, player.getShootRight()));
         }
       }
     }

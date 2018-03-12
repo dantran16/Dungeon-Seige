@@ -69,12 +69,13 @@ public class Player extends GameObject {
    * Source - https://www.youtube.com/watch?v=HblfPi4v128
    */
   private void collision() {
+	final double DAMAGE = .5;
     for(int i = 0; i < handler.object.size(); i++) {
       GameObject temp = handler.object.get(i);
-      if(temp.getType() == Type.Boss) {
+      if(temp.getType() == Type.Boss || temp.getType() == Type.EnemyProjectile) {
     	//when any of the hitbox hits an enemy, lose health
         if(hitbox().intersects(temp.hitbox())) {
-          HUD.P_HEALTH -= 2;
+          HUD.P_HEALTH -= DAMAGE;
           //TODO: Add a knockback method/thingy
         }
       }

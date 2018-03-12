@@ -28,7 +28,7 @@ public abstract class GameObject {
   public void setX(int x) {
     this.x = x;
   }
-  public void sety(int y) {
+  public void setY(int y) {
     this.y = y;
   }
   public void setType(Type type) {

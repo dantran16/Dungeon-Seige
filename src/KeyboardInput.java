@@ -36,27 +36,35 @@ public class KeyboardInput extends KeyAdapter{
       GameObject temp = handler.object.get(i);
       if(temp.getType() == Type.Player) {
     	Player player = (Player) temp;
+    	// This is the jump key for the player
+    	// Inspired by: https://www.youtube.com/watch?v=HblfPi4v128&t=120s
         if(key==KeyEvent.VK_W || key == KeyEvent.VK_UP && !player.canJump()) {
           player.setJump(true);
           player.setSpeedY(-15);
           keyDown[0] = true;
         }
+        // Direction influence down. This will help you move down faster
         if(key==KeyEvent.VK_S || key == KeyEvent.VK_DOWN) {
           temp.setSpeedY(5); 
           keyDown[1] = true;
         }
+        //This is the move left key for the player
+        //This key also makes the player shoot to the left of him.
         if(key==KeyEvent.VK_A || key == KeyEvent.VK_LEFT) {
           player.setShootRight(false);
           temp.setSpeedX(-5);
           keyDown[2] = true;
         }
+        //This is the move right key for the player
+        //This key also makes the player shoot to the right of him.
         if(key==KeyEvent.VK_D || key == KeyEvent.VK_RIGHT) {
           player.setShootRight(true);
           temp.setSpeedX(5);
           keyDown[3] = true;
         }
-        if(key==KeyEvent.VK_X) {
-          handler.addObject(new Projectile(temp.getX(),temp.getY() +10, Type.PlayerProjectile, player.getShootRight()));
+        //This is the shoot key for the player
+        if(key==KeyEvent.VK_X || key==KeyEvent.VK_SPACE || key==KeyEvent.VK_J) {
+          handler.addObject(new Projectile(temp.getX(),temp.getY()+10, Type.PlayerProjectile, player.getShootRight()));
         }
       }
     }

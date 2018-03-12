@@ -63,20 +63,24 @@ public class Player extends GameObject {
 /**
    * Name - collision()
    * 
-   * Description - This method makes the player lose health
-   * if they touch an enemy's hitbox
+   * Description - This method affects how a player can interact with
+   * other objects.
+   * 
+   * When it touches the boss or its projectiles, it will lose health
+   * When it touches a platform, it should collide with it and not go
+   * through it. It also affects how a player can jump. If a player 
+   * touches the ground, he can jump again.
    * 
    * Source - https://www.youtube.com/watch?v=HblfPi4v128
    */
   private void collision() {
-	final double DAMAGE = .5;
+	final double DAMAGE = 1.5;
     for(int i = 0; i < handler.object.size(); i++) {
       GameObject temp = handler.object.get(i);
       if(temp.getType() == Type.Boss || temp.getType() == Type.EnemyProjectile) {
     	//when any of the hitbox hits an enemy, lose health
         if(hitbox().intersects(temp.hitbox())) {
           HUD.P_HEALTH -= DAMAGE;
-          //TODO: Add a knockback method/thingy
         }
       }
       if(temp.getType() == Type.Platform || temp.getType()== Type.Ground) {
@@ -135,15 +139,26 @@ public class Player extends GameObject {
     g.setColor(Color.GREEN);
     ((Graphics2D) g).draw(lefthitbox());
   }
-  
+  /**
+   * Name - fall()
+   * 
+   * Description - This method makes the player 
+   * fall down due to gravity.
+   */
   private void fall() {
     if(falling) {
       y += gravity;
-      if(speedY > jumpHeight) {
-        speedY = jumpHeight;
-      }
     }
   }
+  
+  /**
+   * 
+   * Name - jump(double jumpHeight)
+   * 
+   * Description - This method makes the player jump.
+   * Look at the KeyboardInput class for more info.
+   * 
+   */
   public void jump(double jumpHeight) {
     if(canJump) {
       speedY -= jumpHeight;

@@ -2,13 +2,21 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
+/**
+ * 
+ * Name - Projectile
+ * 
+ * Description - This is used by the player
+ * and the boss in order to attack each other.
+ * These projectiles can damage its opponent.
+ * This projectile can go in two directions.
+ */
 public class Projectile extends GameObject {
   private boolean right;
   public Projectile(double x, double y, Type type, boolean right) {
     super(x, y, type);
     this.right = right;
     this.speedX = 5;
-    // TODO Auto-generated constructor stub
   }
 
   @Override

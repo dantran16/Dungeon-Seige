@@ -1,9 +1,20 @@
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
+/**
+ * 
+ * Name - Game
+ * 
+ * Description - This class is inspired by a youtube series called 
+ * Java Programming: Let's Build A Game. We used this series to help create 
+ * the framework of the game.
+ * 
+ * Source - https://www.youtube.com/watch?v=1gir2R7G9ws
+ */
 public class Game extends Canvas implements Runnable{
   private static final long serialVersionUID = -2602731302445623775L;
   
@@ -71,7 +82,7 @@ public class Game extends Canvas implements Runnable{
   /**
    * Name - run()
    * Description - This includes the render and a fps counter
-   * in the console. I used the source to create the fps loop.
+   * in the console. I used the source to create the game loop.
    * Sources - https://www.youtube.com/watch?v=TNVHWROwYuM
    */
   public void run() {
@@ -100,6 +111,12 @@ public class Game extends Canvas implements Runnable{
     }
     stop();
   }
+  
+  /**
+   * Name - tick()
+   * Description - It basically updates all the objects in
+   * real time in the game loop.
+   */
   private void tick() {
     handler.tick();
     hud.tick();
@@ -126,16 +143,19 @@ public class Game extends Canvas implements Runnable{
       handler.render(g);
       hud.render(g);
     }
+    // GAME OVER GRAPHICS
     if(HUD.P_HEALTH == 0) {
       Font font = new Font("Arial", Font.BOLD, 50);
       g.setFont(font);
       g.drawString("GAME OVER", WIDTH/3, HEIGHT/2);
     }
+    //BEAT THE GAME GRAPHICS
     if(HUD.B_HEALTH == 0){
       Font font = new Font("Arial", Font.BOLD, 40);
       g.setFont(font);
       g.drawString("YOU BEAT THE GAME", WIDTH/4, HEIGHT/2);
     }
+    
     g.dispose();
     bs.show();
   }

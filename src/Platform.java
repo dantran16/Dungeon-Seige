@@ -2,7 +2,17 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-
+/**
+ * 
+ * Name - Platform
+ * 
+ * Description - This is a very basic platform.
+ * It usually has the gametype of platform, which
+ * is used to interact with the player. This will make the
+ * player collide with the platform to make the platform 
+ * more solid.
+ *
+ */
 public class Platform extends GameObject{
   GameHandler handler;
   final int HEIGHT = 10;
@@ -14,14 +24,12 @@ public class Platform extends GameObject{
 
   @Override
   public void tick() {
-    //TODO ADD A COLLISION
   }
 
   @Override
   public void render(Graphics g) {
     g.setColor(Color.GRAY);
     g.fillRect((int)this.x,(int)this.y,WIDTH, HEIGHT);
-    //below is to see hitbox
   }
 
   @Override

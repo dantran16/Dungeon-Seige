@@ -17,9 +17,14 @@ public class GameHandler {
    * method, which is used to update the game.
    */
   public void tick() {
+	final int LIMIT = 100; // used to limit size of list
+	final int INDEX = 25;  // used to help the fps by removing projectiles out of the screen.
     for(int i = 0; i < object.size(); i++) {
       GameObject temp = object.get(i);
       temp.tick();
+    }
+    if(object.size() > 100) {
+      object.remove(INDEX);
     }
   }
   

@@ -1,7 +1,14 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-
+/**
+ * 
+ * Name - Wall
+ * 
+ * Description - This class is similar to the platform class
+ * and the ground class. However, it's more vertical.
+ *
+ */
 public class Wall extends GameObject {
   GameHandler handler;
   final int WIDTH = 10;

@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 /*
  * Name - GameWindow
- * This is a class that creates the window and it uses
+ * Description - This is a class that creates the window and it uses
  * JFrame as the window. The sources below helped me
  * make a framework for the game.
  * Derived from: https://www.youtube.com/watch?v=gHh_96Ss1AI 

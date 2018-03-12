@@ -6,7 +6,7 @@ import java.awt.Rectangle;
  * Name: GameObject
  * Description - This class will be used
  * to create any game object, like enemies,
- * the player, powerups, etc.
+ * the player, platforms, etc.
  * Sources - https://www.youtube.com/watch?v=0T1U0kbu1Sk&
  */
 public abstract class GameObject {

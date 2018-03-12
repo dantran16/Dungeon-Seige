@@ -2,6 +2,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
+/**
+ * 
+ * Name - Ground
+ * 
+ * Description - This class is similar to platform, but it's a 
+ * lot wider.
+ *
+ */
 public class Ground extends GameObject{
 	GameHandler handler;
 	final int HEIGHT = 10;

@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 /*
@@ -38,8 +39,9 @@ public class HUD {
     g.drawRect(P_XPOS, P_YPOS, P_WIDTH, P_HEIGHT);
     
     //Boss's health bar
-    //TODO: CHANGE THE BOSS HEALTH TO TRACK ENEMY +
-    // MAKE IT SMALLER IF WE DO
+    Font font = new Font("Arial", Font.BOLD, 13);
+    g.setFont(font);
+    g.drawString("BOSS", B_XPOS-41, B_YPOS+17);
     g.setColor(Color.GRAY);
     g.fillRect(B_XPOS, B_YPOS, B_WIDTH, B_HEIGHT);
     g.setColor(Color.YELLOW);

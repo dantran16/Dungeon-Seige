@@ -1,4 +1,5 @@
 import java.awt.Canvas;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -118,11 +119,23 @@ public class Game extends Canvas implements Runnable{
     
     Graphics g = bs.getDrawGraphics();
     
-    // THIS IS THE GRAPHICS SECTION
-    g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-    handler.render(g);
-    hud.render(g);
     
+    // THIS IS THE GRAPHICS SECTION
+    if(HUD.P_HEALTH > 0 || HUD.B_HEALTH > 0) {
+      g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+      handler.render(g);
+      hud.render(g);
+    }
+    if(HUD.P_HEALTH == 0) {
+      Font font = new Font("Arial", Font.BOLD, 50);
+      g.setFont(font);
+      g.drawString("GAME OVER", WIDTH/3, HEIGHT/2);
+    }
+    if(HUD.B_HEALTH == 0){
+      Font font = new Font("Arial", Font.BOLD, 40);
+      g.setFont(font);
+      g.drawString("YOU BEAT THE GAME", WIDTH/4, HEIGHT/2);
+    }
     g.dispose();
     bs.show();
   }

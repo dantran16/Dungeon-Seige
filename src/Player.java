@@ -35,18 +35,19 @@ public class Player extends GameObject {
    */
   @Override
   public void tick() {
-    move();
-    fall();
-    if(falling || canJump) {
-      speedY += gravity;
-      if(speedY > jumpHeight) {
-        speedY = jumpHeight;
+	if(HUD.P_HEALTH > 0 && HUD.B_HEALTH > 0) {
+      move();
+      fall();
+      if(falling || canJump) {
+        speedY += gravity;
+        if(speedY > jumpHeight) {
+          speedY = jumpHeight;
+        }
       }
-    }
-	collision();
-	x = Game.border(x, 10, Game.WIDTH - XDISPLACEMENT);
-    y = Game.border(y, 10, Game.HEIGHT - YDISPLACEMENT);
-
+	  collision();
+	  x = Game.border(x, 10, Game.WIDTH - XDISPLACEMENT);
+      y = Game.border(y, 10, Game.HEIGHT - YDISPLACEMENT);
+	}
   }
   
   /**
@@ -55,8 +56,8 @@ public class Player extends GameObject {
    * Description - This method just puts all the movement inside this.
    */
   private void move() {
-      x+=speedX;
-      y+=speedY;
+    x+=speedX;
+    y+=speedY;
   }
 
 /**
